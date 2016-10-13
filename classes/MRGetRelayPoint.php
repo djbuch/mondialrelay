@@ -135,7 +135,7 @@ class MRGetRelayPoint implements IMondialRelayWSMethod
 
 				$valueDetailed['value'] = Tools::strtoupper($valueDetailed['value']);
 				// Call a pointer function if exist to do different test
-				if (isset($valueDetailed['methodValidation']) && method_exists('MRTools', $valueDetailed['methodValidation']) && isset($valueDetailed['params']) && MRTools::$valueDetailed['methodValidation']($valueDetailed['value'], $valueDetailed['params']))
+				if (isset($valueDetailed['methodValidation']) && method_exists('MRTools', $valueDetailed['methodValidation']) && isset($valueDetailed['params']) && MRTools::{$valueDetailed['methodValidation']}($valueDetailed['value'], $valueDetailed['params']))
 					$concatenationValue .= $valueDetailed['value'];
 				// Use simple Regex test given by MondialRelay
 				else if (isset($valueDetailed['regexValidation']) && preg_match($valueDetailed['regexValidation'], $valueDetailed['value'], $matches))
